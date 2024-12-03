@@ -37,3 +37,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(createHeart, 300);
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const openVideoBtn = document.getElementById('openVideo');
+    const videoPopup = document.getElementById('videoPopup');
+    const closePopupBtn = document.getElementById('closePopup');
+
+    openVideoBtn.addEventListener('click', () => {
+        videoPopup.style.display = 'flex';
+    });
+
+    closePopupBtn.addEventListener('click', () => {
+        videoPopup.style.display = 'none';
+    });
+
+    videoPopup.addEventListener('click', (event) => {
+        if (event.target === videoPopup) {
+            videoPopup.style.display = 'none';
+        }
+    });
+});
+

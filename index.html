@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday Timeline</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
     <!-- Hero Section -->
@@ -20,6 +22,7 @@
             <img src="images/cake.png" alt="Birthday Cake">
             <h2>Happy Birthday, My Dearest!</h2>
             <p>Today, I celebrate you and all the joy you bring into my life. I love you endlessly!</p>
+            <button class="video-button" id="openVideo">🎥 Play Video</button>
         </div>
     </section>
 
@@ -34,6 +37,15 @@
                     <h3>First Meeting</h3>
                     <p>Our magical first meeting will always be etched in my heart.</p>
                     <img src="images/img.png" alt="First Meeting">
+                    <p class="date-place">
+                        <span class="date">
+                            <i class="fa fa-calendar" aria-hidden="true"></i> Jan 15, 2020
+                        </span>
+                        <span class="separator">|</span>
+                        <span class="place">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> Coffee House
+                        </span>
+                    </p>
                 </div>
             </div>
             <div class="timeline-card right">
@@ -42,6 +54,15 @@
                     <h3>Our First Trip</h3>
                     <p>Exploring the mountains together was unforgettable.</p>
                     <img src="images/img.png" alt="First Trip">
+                    <p class="date-place">
+                        <span class="date">
+                            <i class="fa fa-calendar" aria-hidden="true"></i> Jan 15, 2020
+                        </span>
+                        <span class="separator">|</span>
+                        <span class="place">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> Coffee House
+                        </span>
+                    </p>
                 </div>
             </div>
             <div class="timeline-card left">
@@ -58,6 +79,15 @@
                     <h3>Our First Trip</h3>
                     <p>Exploring the mountains together was unforgettable.</p>
                     <img src="images/img.png" alt="First Trip">
+                    <p class="date-place">
+                        <span class="date">
+                            <i class="fa fa-calendar" aria-hidden="true"></i> Jan 15, 2020
+                        </span>
+                        <span class="separator">|</span>
+                        <span class="place">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> Coffee House
+                        </span>
+                    </p>
                 </div>
             </div>
             <div class="timeline-card left">
@@ -66,6 +96,15 @@
                     <h3>First Meeting</h3>
                     <p>Our magical first meeting will always be etched in my heart.</p>
                     <img src="images/img.png" alt="First Meeting">
+                    <p class="date-place">
+                        <span class="date">
+                            <i class="fa fa-calendar" aria-hidden="true"></i> Jan 15, 2020
+                        </span>
+                        <span class="separator">|</span>
+                        <span class="place">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> Coffee House
+                        </span>
+                    </p>
                 </div>
             </div>
             <div class="timeline-card right">
@@ -74,9 +113,29 @@
                     <h3>Our First Trip</h3>
                     <p>Exploring the mountains together was unforgettable.</p>
                     <img src="images/img.png" alt="First Trip">
+                    <p class="date-place">
+                        <span class="date">
+                            <i class="fa fa-calendar" aria-hidden="true"></i> Jan 15, 2020
+                        </span>
+                        <span class="separator">|</span>
+                        <span class="place">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> Coffee House
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
+
+        <!-- Video Popup -->
+    <div class="video-popup" id="videoPopup">
+        <div class="video-popup-content">
+            <span class="close-popup" id="closePopup">&times;</span>
+            <video controls>
+                <source src="videos/birthday.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
         
     </section>
 

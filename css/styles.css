@@ -48,6 +48,70 @@ body {
     color: #555;
 }
 
+
+/* Birthday Card */
+.video-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff758c, #ffb199);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Popup */
+.video-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-popup-content video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-popup:hover {
+    color: #ff758c;
+}
+
+
 /* Timeline Section */
 .timeline {
     padding: 40px;
@@ -125,6 +189,48 @@ body {
     border-radius: 10px;
 }
 
+
+/* Styling for Date and Place on One Line */
+.date-place {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    flex-wrap: wrap; 
+}
+
+.date, .place {
+    font-weight: bold;
+    color: #ff758c;
+    display: flex;
+    align-items: center; /* Align icon with text */
+    gap: 5px;
+}
+
+.separator {
+    color: #aaa;
+    font-weight: normal;
+    margin: 0 5px;
+}
+
+.date i, .place i {
+    font-size: 1rem;
+    color: #ff758c; 
+}
+
+/* Responsive Adjustment */
+@media screen and (max-width: 768px) {
+    .date-place {
+        font-size: 0.8rem; 
+        gap: 5px; 
+    }
+}
+
+
+
 /* Floating Hearts Animation */
 .floating-hearts {
     position: fixed; 
@@ -161,16 +267,7 @@ body {
 }
 
 
-
-/* Animations */
-@keyframes spin {
-    from {
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
+ 
 @keyframes fadeIn {
     from {
         opacity: 0;
