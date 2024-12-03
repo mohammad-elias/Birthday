@@ -13,3 +13,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cards.forEach((card) => observer.observe(card));
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.floating-hearts');
+    const heartCount = 30;
+
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        
+        heart.style.left = `${Math.random() * 100}vw`;  
+        heart.style.animationDelay = `${Math.random() * 5}s`;  
+        heart.style.animationDuration = `${Math.random() * 5 + 5}s`;  
+
+        heart.innerText = '❤️';
+
+        container.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, parseFloat(heart.style.animationDuration) * 1000);
+    }
+
+    setInterval(createHeart, 300);
+});

@@ -81,8 +81,8 @@ body {
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.5s ease;
-    cursor: pointer; /* Add pointer cursor for hover effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease; /* Added rotation transition */
+    cursor: pointer; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease; 
 }
 .timeline-card.left {
     align-self: flex-start;
@@ -98,7 +98,7 @@ body {
 }
 .timeline-card:hover {
     transform: translateY(-10px) rotate(3deg);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
 
 }
 
@@ -127,15 +127,40 @@ body {
 
 /* Floating Hearts Animation */
 .floating-hearts {
-    position: absolute;
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('hearts.png') repeat;
-    z-index: -1;
-    animation: float 10s infinite linear;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none; 
 }
+
+.heart {
+    position: absolute;
+    color: #ff758c;
+    font-size: 2rem; 
+    animation: floatUp 5s infinite ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+    }
+}
+
+
 
 /* Animations */
 @keyframes spin {
@@ -156,14 +181,8 @@ body {
         transform: scale(1);
     }
 }
-@keyframes float {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100% 100%;
-    }
-}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -176,8 +195,5 @@ body {
     .timeline-card.left, .timeline-card.right {
         width: 90%;
         margin: 15px auto;
-    }
-    .timeline-card:hover {
-        transform: translateY(-10px) rotate(0); /* No rotation on smaller screens */
     }
 }
