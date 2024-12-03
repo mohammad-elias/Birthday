@@ -1,0 +1,183 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fefefe;
+    color: #333;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    padding: 50px;
+    background: linear-gradient(135deg, #ff758c, #ffb199);
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Birthday Card */
+.birthday-card {
+    padding: 40px;
+    background: #fef6e4;
+}
+.card {
+    display: inline-block;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: fadeIn 1.5s ease;
+}
+.card img {
+    width: 100px;
+    margin: 20px 0;
+}
+.spinning-love {
+    font-size: 2.5rem;
+    color: #ff758c;
+    animation: spin 3s linear infinite;
+}
+.card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+.card p {
+    color: #555;
+}
+
+/* Timeline Section */
+.timeline {
+    padding: 40px;
+    background: linear-gradient(180deg, #ffe3ed, #f8c8dc);
+    position: relative;
+}
+.timeline h2 {
+    margin-bottom: 30px;
+}
+.timeline-container {
+    position: relative;
+}
+.timeline-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #ff758c;
+    transform: translateX(-50%);
+}
+.timeline-card {
+    position: relative;
+    width: 45%;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+    cursor: pointer; /* Add pointer cursor for hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease; /* Added rotation transition */
+}
+.timeline-card.left {
+    align-self: flex-start;
+    margin-left: auto;
+}
+.timeline-card.right {
+    align-self: flex-end;
+    margin-right: auto;
+}
+.timeline-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.timeline-card:hover {
+    transform: translateY(-10px) rotate(3deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+
+}
+
+.timeline-card.right:hover {
+    transform: translateY(-10px) rotate(-3deg); 
+}
+
+.dot {
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background: #ff758c;
+    border-radius: 50%;
+}
+.timeline-card.right .dot {
+    left: auto;
+    right: -10px;
+}
+.content img {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+/* Floating Hearts Animation */
+.floating-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('hearts.png') repeat;
+    z-index: -1;
+    animation: float 10s infinite linear;
+}
+
+/* Animations */
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes float {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-card {
+        width: 90%;
+    }
+    .timeline-container:before {
+        left: 10%;
+    }
+    .timeline-card.left, .timeline-card.right {
+        width: 90%;
+        margin: 15px auto;
+    }
+    .timeline-card:hover {
+        transform: translateY(-10px) rotate(0); /* No rotation on smaller screens */
+    }
+}
