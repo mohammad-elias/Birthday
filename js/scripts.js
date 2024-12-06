@@ -39,24 +39,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-const videoPopup = document.getElementById('videoPopup');
-const closePopupBtn = document.getElementById('closePopup');
-
-openVideoBtn.addEventListener('click', () => {
-        videoPopup.style.display = 'flex';
-    });document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+    const videoPopup = document.getElementById('videoPopup');
     const openVideoBtn = document.getElementById('openVideo');
-   
+    const closePopupBtn = document.getElementById('closePopup');
+    const videoElement = videoPopup.querySelector('video');
+
+    openVideoBtn.addEventListener('click', () => {
+        videoPopup.style.display = 'flex';
+        videoElement.play(); 
+    });
 
     closePopupBtn.addEventListener('click', () => {
         videoPopup.style.display = 'none';
+        videoElement.pause();
+        videoElement.currentTime = 0; 
     });
-
+    
     videoPopup.addEventListener('click', (event) => {
         if (event.target === videoPopup) {
             videoPopup.style.display = 'none';
+            videoElement.pause(); 
+            videoElement.currentTime = 0; 
         }
     });
 });
-
-
