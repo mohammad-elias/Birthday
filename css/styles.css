@@ -193,6 +193,18 @@ body {
     border-radius: 10px;
 }
 
+@media (max-width: 768px) { 
+    .content img {
+        height: 300px; 
+    }
+}
+
+@media (max-width: 480px) { 
+    .content img {
+        height: 200px; 
+    }
+}
+
 
 /* Styling for Date and Place on One Line */
 .date-place {
