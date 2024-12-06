@@ -39,69 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//  const videoPopup = document.getElementById('videoPopup');
-//     const closePopupBtn = document.getElementById('closePopup');
+const videoPopup = document.getElementById('videoPopup');
+const closePopupBtn = document.getElementById('closePopup');
 
-//     openVideoBtn.addEventListener('click', () => {
-//         videoPopup.style.display = 'flex';
-//     });document.addEventListener('DOMContentLoaded', () => {
-//     const openVideoBtn = document.getElementById('openVideo');
+openVideoBtn.addEventListener('click', () => {
+        videoPopup.style.display = 'flex';
+    });document.addEventListener('DOMContentLoaded', () => {
+    const openVideoBtn = document.getElementById('openVideo');
    
 
-//     closePopupBtn.addEventListener('click', () => {
-//         videoPopup.style.display = 'none';
-//     });
-
-//     videoPopup.addEventListener('click', (event) => {
-//         if (event.target === videoPopup) {
-//             videoPopup.style.display = 'none';
-//         }
-//     });
-// });
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const openVideoBtn = document.getElementById('openVideo');
-    const videoPopup = document.getElementById('videoPopup');
-    const closePopupBtn = document.getElementById('closePopup');
-    const birthdayVideo = document.getElementById('birthdayVideo');
-    const downloadVideoBtn = document.getElementById('downloadVideo');
-    const fullscreenVideoBtn = document.getElementById('fullscreenVideo');
-
-    // Open popup
-    openVideoBtn.addEventListener('click', () => {
-        videoPopup.style.display = 'flex';
-    });
-
-    // Close popup
     closePopupBtn.addEventListener('click', () => {
         videoPopup.style.display = 'none';
     });
 
-    // Close popup when clicking outside of the video content
     videoPopup.addEventListener('click', (event) => {
         if (event.target === videoPopup) {
             videoPopup.style.display = 'none';
-        }
-    });
-
-    // Download video
-    downloadVideoBtn.addEventListener('click', () => {
-        const videoSrc = birthdayVideo.querySelector('source').src;
-        const a = document.createElement('a');
-        a.href = videoSrc;
-        a.download = 'Happy_Birthday.mp4';
-        a.click();
-    });
-
-    // Fullscreen video
-    fullscreenVideoBtn.addEventListener('click', () => {
-        if (birthdayVideo.requestFullscreen) {
-            birthdayVideo.requestFullscreen();
-        } else if (birthdayVideo.webkitRequestFullscreen) { // Safari
-            birthdayVideo.webkitRequestFullscreen();
-        } else if (birthdayVideo.msRequestFullscreen) { // IE/Edge
-            birthdayVideo.msRequestFullscreen();
         }
     });
 });
